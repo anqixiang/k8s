@@ -1,0 +1,12 @@
+apiVersion: kubeadm.k8s.io/v1beta2
+kind: JoinConfiguration
+discovery:
+  bootstrapToken:
+    apiServerEndpoint: {k8s_master}:6443
+    token: {TOKEN}
+    unsafeSkipCAVerification: true
+  tlsBootstrapToken: {TOKEN}
+
+nodeRegistration:
+  criSocket: /var/run/dockershim.sock
+  name: {NODE_NAME}

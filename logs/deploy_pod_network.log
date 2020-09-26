@@ -1,0 +1,40 @@
+[32m############部署pod网络......[0m
+excute time:2020-09-03 21:54:32
+
+[1A[1K[K7bff100f35cb: Loading layer [>                                                  ]  65.54kB/4.672MB[1B[1A[1K[K7bff100f35cb: Loading layer [==================================================>]  4.672MB/4.672MB[1B
+[1A[1K[K5d3f68f6da8f: Loading layer [>                                                  ]   98.3kB/9.526MB[1B[1A[1K[K5d3f68f6da8f: Loading layer [=================================================> ]  9.339MB/9.526MB[1B[1A[1K[K5d3f68f6da8f: Loading layer [==================================================>]  9.526MB/9.526MB[1B
+[1A[1K[K9b48060f404d: Loading layer [>                                                  ]  65.54kB/5.912MB[1B[1A[1K[K9b48060f404d: Loading layer [==================================>                ]  4.129MB/5.912MB[1B[1A[1K[K9b48060f404d: Loading layer [==================================================>]  5.912MB/5.912MB[1B
+[1A[1K[K3f3a4ce2b719: Loading layer [>                                                  ]  360.4kB/35.25MB[1B[1A[1K[K3f3a4ce2b719: Loading layer [====================================>              ]  25.59MB/35.25MB[1B[1A[1K[K3f3a4ce2b719: Loading layer [==================================================>]  35.25MB/35.25MB[1B
+[1A[1K[K9ce0bb155166: Loading layer [==================================================>]   5.12kB/5.12kB[1B[1A[1K[K9ce0bb155166: Loading layer [==================================================>]   5.12kB/5.12kB[1BLoaded image: quay.io/coreos/flannel:v0.11.0-amd64
+Connection to 192.168.1.11 closed.
+
+[1A[1K[Kfe9a8b4f1dcc: Loading layer [>                                                  ]  458.8kB/43.87MB[1B[1A[1K[Kfe9a8b4f1dcc: Loading layer [======================>                            ]  19.73MB/43.87MB[1B[1A[1K[Kfe9a8b4f1dcc: Loading layer [===========================================>       ]  38.54MB/43.87MB[1B[1A[1K[Kfe9a8b4f1dcc: Loading layer [==================================================>]  43.87MB/43.87MB[1B
+[1A[1K[K15c9248be8a9: Loading layer [>                                                  ]  65.54kB/3.403MB[1B[1A[1K[K15c9248be8a9: Loading layer [==================================================>]  3.403MB/3.403MB[1B[1A[1K[K15c9248be8a9: Loading layer [==================================================>]  3.403MB/3.403MB[1B
+[1A[1K[Kd2956a2953c6: Loading layer [>                                                  ]    426kB/40.65MB[1B[1A[1K[Kd2956a2953c6: Loading layer [===============================>                   ]  25.99MB/40.65MB[1B[1A[1K[Kd2956a2953c6: Loading layer [==================================================>]  40.65MB/40.65MB[1BLoaded image: registry.aliyuncs.com/google_containers/kube-proxy:v1.16.2
+Connection to 192.168.1.11 closed.
+
+[1A[1K[Ke17133b79956: Loading layer [==>                                                ]  32.77kB/744.4kB[1B[1A[1K[Ke17133b79956: Loading layer [==================================================>]  744.4kB/744.4kB[1B[1A[1K[Ke17133b79956: Loading layer [==================================================>]  744.4kB/744.4kB[1BLoaded image: registry.aliyuncs.com/google_containers/pause:3.1
+Connection to 192.168.1.11 closed.
+podsecuritypolicy.policy/psp.flannel.unprivileged created
+clusterrole.rbac.authorization.k8s.io/flannel created
+clusterrolebinding.rbac.authorization.k8s.io/flannel created
+serviceaccount/flannel created
+configmap/kube-flannel-cfg created
+daemonset.apps/kube-flannel-ds-amd64 created
+daemonset.apps/kube-flannel-ds-arm64 created
+daemonset.apps/kube-flannel-ds-arm created
+daemonset.apps/kube-flannel-ds-ppc64le created
+daemonset.apps/kube-flannel-ds-s390x created
+Connection to 192.168.1.10 closed.
+NAME        STATUS     ROLES    AGE   VERSION
+k8smaster   NotReady   master   36s   v1.16.2
+k8snode1    NotReady   <none>   9s    v1.16.2
+NAME                          READY   STATUS              RESTARTS   AGE
+coredns-58cc8c89f4-brtx8      0/1     Pending             0          16s
+coredns-58cc8c89f4-chgf7      0/1     Pending             0          16s
+kube-flannel-ds-amd64-b4dxc   0/1     Init:0/1            0          0s
+kube-flannel-ds-amd64-rdvdf   0/1     Init:0/1            0          0s
+kube-proxy-9lvgh              1/1     Running             0          17s
+kube-proxy-bzwfs              0/1     ContainerCreating   0          9s
+Connection to 192.168.1.10 closed.
+[96mk8s集群部署完毕，等待所有pod为Running状态[0m

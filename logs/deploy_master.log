@@ -1,0 +1,126 @@
+[32m############部署Master......[0m
+excute time:2020-09-03 21:53:25
+[preflight] Running pre-flight checks
+W0903 21:53:25.679621    6061 removeetcdmember.go:79] [reset] No kubeadm config, using etcd pod spec to get data directory
+[reset] No etcd config found. Assuming external etcd
+[reset] Please, manually reset etcd to prevent further issues
+[reset] Stopping the kubelet service
+[reset] Unmounting mounted directories in "/var/lib/kubelet"
+W0903 21:53:25.682318    6061 cleanupnode.go:99] [reset] Failed to evaluate the "/var/lib/kubelet" directory. Skipping its unmount and cleanup: lstat /var/lib/kubelet: no such file or directory
+[reset] Deleting contents of config directories: [/etc/kubernetes/manifests /etc/kubernetes/pki]
+[reset] Deleting files: [/etc/kubernetes/admin.conf /etc/kubernetes/kubelet.conf /etc/kubernetes/bootstrap-kubelet.conf /etc/kubernetes/controller-manager.conf /etc/kubernetes/scheduler.conf]
+[reset] Deleting contents of stateful directories: [/etc/cni/net.d /var/lib/dockershim /var/run/kubernetes /var/lib/cni]
+
+The reset process does not reset or clean up iptables rules or IPVS tables.
+If you wish to reset iptables, you must do so manually by using the "iptables" command.
+
+If your cluster was setup to utilize IPVS, run ipvsadm --clear (or similar)
+to reset your system's IPVS tables.
+
+The reset process does not clean your kubeconfig files and you must remove them manually.
+Please, check the contents of the $HOME/.kube/config file.
+Connection to 192.168.1.10 closed.
+
+[1A[1K[K225df95e717c: Loading layer [====>                                              ]  32.77kB/336.4kB[1B[1A[1K[K225df95e717c: Loading layer [==================================================>]  336.4kB/336.4kB[1B[1A[1K[K225df95e717c: Loading layer [==================================================>]  336.4kB/336.4kB[1B
+[1A[1K[K169c87e3a0eb: Loading layer [>                                                  ]  458.8kB/43.89MB[1B[1A[1K[K169c87e3a0eb: Loading layer [============================>                      ]  25.23MB/43.89MB[1B[1A[1K[K169c87e3a0eb: Loading layer [==================================================>]  43.89MB/43.89MB[1BLoaded image: registry.aliyuncs.com/google_containers/coredns:1.6.2
+
+[1A[1K[Kfe9a8b4f1dcc: Loading layer [>                                                  ]  458.8kB/43.87MB[1B[1A[1K[Kfe9a8b4f1dcc: Loading layer [====>                                              ]  4.129MB/43.87MB[1B[1A[1K[Kfe9a8b4f1dcc: Loading layer [=====>                                             ]  4.588MB/43.87MB[1B[1A[1K[Kfe9a8b4f1dcc: Loading layer [======>                                            ]  5.964MB/43.87MB[1B[1A[1K[Kfe9a8b4f1dcc: Loading layer [=======>                                           ]  6.423MB/43.87MB[1B[1A[1K[Kfe9a8b4f1dcc: Loading layer [=======>                                           ]  6.881MB/43.87MB[1B[1A[1K[Kfe9a8b4f1dcc: Loading layer [==========================>                        ]   23.4MB/43.87MB[1B[1A[1K[Kfe9a8b4f1dcc: Loading layer [===========================>                       ]  23.86MB/43.87MB[1B[1A[1K[Kfe9a8b4f1dcc: Loading layer [============================>                      ]  25.23MB/43.87MB[1B[1A[1K[Kfe9a8b4f1dcc: Loading layer [=============================>                     ]  26.15MB/43.87MB[1B[1A[1K[Kfe9a8b4f1dcc: Loading layer [==============================>                    ]  26.61MB/43.87MB[1B[1A[1K[Kfe9a8b4f1dcc: Loading layer [==============================>                    ]  27.07MB/43.87MB[1B[1A[1K[Kfe9a8b4f1dcc: Loading layer [===============================>                   ]  27.53MB/43.87MB[1B[1A[1K[Kfe9a8b4f1dcc: Loading layer [===============================>                   ]  27.98MB/43.87MB[1B[1A[1K[Kfe9a8b4f1dcc: Loading layer [================================>                  ]  28.44MB/43.87MB[1B[1A[1K[Kfe9a8b4f1dcc: Loading layer [=================================>                 ]  29.82MB/43.87MB[1B[1A[1K[Kfe9a8b4f1dcc: Loading layer [==================================>                ]  30.28MB/43.87MB[1B[1A[1K[Kfe9a8b4f1dcc: Loading layer [===================================>               ]   31.2MB/43.87MB[1B[1A[1K[Kfe9a8b4f1dcc: Loading layer [==========================================>        ]  37.16MB/43.87MB[1B[1A[1K[Kfe9a8b4f1dcc: Loading layer [==========================================>        ]  37.62MB/43.87MB[1B[1A[1K[Kfe9a8b4f1dcc: Loading layer [==================================================>]  43.87MB/43.87MB[1B
+[1A[1K[K9a01478873f3: Loading layer [>                                                  ]  557.1kB/183.2MB[1B[1A[1K[K9a01478873f3: Loading layer [======>                                            ]  25.07MB/183.2MB[1B[1A[1K[K9a01478873f3: Loading layer [=============>                                     ]  49.58MB/183.2MB[1B[1A[1K[K9a01478873f3: Loading layer [====================>                              ]  74.65MB/183.2MB[1B[1A[1K[K9a01478873f3: Loading layer [===========================>                       ]  99.16MB/183.2MB[1B[1A[1K[K9a01478873f3: Loading layer [=================================>                 ]  123.1MB/183.2MB[1B[1A[1K[K9a01478873f3: Loading layer [========================================>          ]  148.2MB/183.2MB[1B[1A[1K[K9a01478873f3: Loading layer [===============================================>   ]  173.2MB/183.2MB[1B[1A[1K[K9a01478873f3: Loading layer [==================================================>]  183.2MB/183.2MB[1B
+[1A[1K[Kec2dc9e995e3: Loading layer [>                                                  ]  229.4kB/21.18MB[1B[1A[1K[Kec2dc9e995e3: Loading layer [================================>                  ]  13.76MB/21.18MB[1B[1A[1K[Kec2dc9e995e3: Loading layer [==================================================>]  21.18MB/21.18MB[1BLoaded image: registry.aliyuncs.com/google_containers/etcd:3.3.15-0
+
+[1A[1K[K7bff100f35cb: Loading layer [>                                                  ]  65.54kB/4.672MB[1B[1A[1K[K7bff100f35cb: Loading layer [==================================================>]  4.672MB/4.672MB[1B
+[1A[1K[K5d3f68f6da8f: Loading layer [>                                                  ]   98.3kB/9.526MB[1B[1A[1K[K5d3f68f6da8f: Loading layer [=================================================> ]  9.437MB/9.526MB[1B[1A[1K[K5d3f68f6da8f: Loading layer [==================================================>]  9.526MB/9.526MB[1B
+[1A[1K[K9b48060f404d: Loading layer [>                                                  ]  65.54kB/5.912MB[1B[1A[1K[K9b48060f404d: Loading layer [=================================>                 ]  3.932MB/5.912MB[1B[1A[1K[K9b48060f404d: Loading layer [==================================================>]  5.912MB/5.912MB[1B
+[1A[1K[K3f3a4ce2b719: Loading layer [>                                                  ]  360.4kB/35.25MB[1B[1A[1K[K3f3a4ce2b719: Loading layer [==================================>                ]  24.51MB/35.25MB[1B[1A[1K[K3f3a4ce2b719: Loading layer [==================================================>]  35.25MB/35.25MB[1B
+[1A[1K[K9ce0bb155166: Loading layer [==================================================>]   5.12kB/5.12kB[1B[1A[1K[K9ce0bb155166: Loading layer [==================================================>]   5.12kB/5.12kB[1BLoaded image: quay.io/coreos/flannel:v0.11.0-amd64
+
+[1A[1K[K76c1ad2b736e: Loading layer [>                                                  ]  557.1kB/174.8MB[1B[1A[1K[K76c1ad2b736e: Loading layer [=======>                                           ]  24.51MB/174.8MB[1B[1A[1K[K76c1ad2b736e: Loading layer [=============>                                     ]  48.46MB/174.8MB[1B[1A[1K[K76c1ad2b736e: Loading layer [====================>                              ]  70.19MB/174.8MB[1B[1A[1K[K76c1ad2b736e: Loading layer [===========================>                       ]   94.7MB/174.8MB[1B[1A[1K[K76c1ad2b736e: Loading layer [==================================>                ]  119.2MB/174.8MB[1B[1A[1K[K76c1ad2b736e: Loading layer [=========================================>         ]  143.7MB/174.8MB[1B[1A[1K[K76c1ad2b736e: Loading layer [================================================>  ]  168.8MB/174.8MB[1B[1A[1K[K76c1ad2b736e: Loading layer [==================================================>]  174.8MB/174.8MB[1BLoaded image: registry.aliyuncs.com/google_containers/kube-apiserver:v1.16.2
+
+[1A[1K[K4a63b184ed8b: Loading layer [>                                                  ]  557.1kB/121MB[1B[1A[1K[K4a63b184ed8b: Loading layer [==========>                                        ]  24.51MB/121MB[1B[1A[1K[K4a63b184ed8b: Loading layer [====================>                              ]  48.46MB/121MB[1B[1A[1K[K4a63b184ed8b: Loading layer [=============================>                     ]  70.19MB/121MB[1B[1A[1K[K4a63b184ed8b: Loading layer [======================================>            ]  94.14MB/121MB[1B[1A[1K[K4a63b184ed8b: Loading layer [================================================>  ]  118.1MB/121MB[1B[1A[1K[K4a63b184ed8b: Loading layer [==================================================>]    121MB/121MB[1BLoaded image: registry.aliyuncs.com/google_containers/kube-controller-manager:v1.16.2
+
+[1A[1K[K15c9248be8a9: Loading layer [>                                                  ]  65.54kB/3.403MB[1B[1A[1K[K15c9248be8a9: Loading layer [==================================================>]  3.403MB/3.403MB[1B[1A[1K[K15c9248be8a9: Loading layer [==================================================>]  3.403MB/3.403MB[1B
+[1A[1K[Kd2956a2953c6: Loading layer [>                                                  ]    426kB/40.65MB[1B[1A[1K[Kd2956a2953c6: Loading layer [=============================>                     ]  24.28MB/40.65MB[1B[1A[1K[Kd2956a2953c6: Loading layer [==================================================>]  40.65MB/40.65MB[1BLoaded image: registry.aliyuncs.com/google_containers/kube-proxy:v1.16.2
+
+[1A[1K[Kc57e3b361898: Loading layer [>                                                  ]  458.8kB/44.95MB[1B[1A[1K[Kc57e3b361898: Loading layer [============================>                      ]  25.23MB/44.95MB[1B[1A[1K[Kc57e3b361898: Loading layer [==================================================>]  44.95MB/44.95MB[1B[1A[1K[Kc57e3b361898: Loading layer [==================================================>]  44.95MB/44.95MB[1BLoaded image: registry.aliyuncs.com/google_containers/kube-scheduler:v1.16.2
+
+[1A[1K[K95ef25a32043: Loading layer [>                                                  ]  557.1kB/72.49MB[1B[1A[1K[K95ef25a32043: Loading layer [=============>                                     ]  20.05MB/72.49MB[1B[1A[1K[K95ef25a32043: Loading layer [===========================>                       ]  39.55MB/72.49MB[1B[1A[1K[K95ef25a32043: Loading layer [=========================================>         ]  60.16MB/72.49MB[1B[1A[1K[K95ef25a32043: Loading layer [==============================================>    ]  66.85MB/72.49MB[1B[1A[1K[K95ef25a32043: Loading layer [==================================================>]  72.49MB/72.49MB[1B
+[1A[1K[Kd899691659b0: Loading layer [>                                                  ]  557.1kB/64.16MB[1B[1A[1K[Kd899691659b0: Loading layer [==================>                                ]  23.95MB/64.16MB[1B[1A[1K[Kd899691659b0: Loading layer [=====================================>             ]  48.46MB/64.16MB[1B[1A[1K[Kd899691659b0: Loading layer [=================================================> ]  64.06MB/64.16MB[1B[1A[1K[Kd899691659b0: Loading layer [==================================================>]  64.16MB/64.16MB[1B
+[1A[1K[K227442bb48dc: Loading layer [==================================================>]  3.072kB/3.072kB[1B[1A[1K[K227442bb48dc: Loading layer [==================================================>]  3.072kB/3.072kB[1B
+[1A[1K[K1698c1b7e3e6: Loading layer [==================================================>]  4.096kB/4.096kB[1B[1A[1K[K1698c1b7e3e6: Loading layer [==================================================>]  4.096kB/4.096kB[1B
+[1A[1K[K98b4c818e603: Loading layer [==================================================>]  3.584kB/3.584kB[1B[1A[1K[K98b4c818e603: Loading layer [==================================================>]  3.584kB/3.584kB[1BLoaded image: nginx:latest
+
+[1A[1K[Ke17133b79956: Loading layer [==>                                                ]  32.77kB/744.4kB[1B[1A[1K[Ke17133b79956: Loading layer [==================================================>]  744.4kB/744.4kB[1B[1A[1K[Ke17133b79956: Loading layer [==================================================>]  744.4kB/744.4kB[1BLoaded image: registry.aliyuncs.com/google_containers/pause:3.1
+Connection to 192.168.1.10 closed.
+######安装Master......
+[init] Using Kubernetes version: v1.16.2
+[preflight] Running pre-flight checks
+	[WARNING IsDockerSystemdCheck]: detected "cgroupfs" as the Docker cgroup driver. The recommended driver is "systemd". Please follow the guide at https://kubernetes.io/docs/setup/cri/
+	[WARNING Hostname]: hostname "k8smaster" could not be reached
+	[WARNING Hostname]: hostname "k8smaster": lookup k8smaster on 100.125.1.250:53: no such host
+[preflight] Pulling images required for setting up a Kubernetes cluster
+[preflight] This might take a minute or two, depending on the speed of your internet connection
+[preflight] You can also perform this action in beforehand using 'kubeadm config images pull'
+[kubelet-start] Writing kubelet environment file with flags to file "/var/lib/kubelet/kubeadm-flags.env"
+[kubelet-start] Writing kubelet configuration to file "/var/lib/kubelet/config.yaml"
+[kubelet-start] Activating the kubelet service
+[certs] Using certificateDir folder "/etc/kubernetes/pki"
+[certs] Generating "ca" certificate and key
+[certs] Generating "apiserver" certificate and key
+[certs] apiserver serving cert is signed for DNS names [k8smaster kubernetes kubernetes.default kubernetes.default.svc kubernetes.default.svc.cluster.local] and IPs [10.1.0.1 192.168.1.10]
+[certs] Generating "apiserver-kubelet-client" certificate and key
+[certs] Generating "front-proxy-ca" certificate and key
+[certs] Generating "front-proxy-client" certificate and key
+[certs] Generating "etcd/ca" certificate and key
+[certs] Generating "etcd/server" certificate and key
+[certs] etcd/server serving cert is signed for DNS names [k8smaster localhost] and IPs [192.168.1.10 127.0.0.1 ::1]
+[certs] Generating "etcd/peer" certificate and key
+[certs] etcd/peer serving cert is signed for DNS names [k8smaster localhost] and IPs [192.168.1.10 127.0.0.1 ::1]
+[certs] Generating "etcd/healthcheck-client" certificate and key
+[certs] Generating "apiserver-etcd-client" certificate and key
+[certs] Generating "sa" key and public key
+[kubeconfig] Using kubeconfig folder "/etc/kubernetes"
+[kubeconfig] Writing "admin.conf" kubeconfig file
+[kubeconfig] Writing "kubelet.conf" kubeconfig file
+[kubeconfig] Writing "controller-manager.conf" kubeconfig file
+[kubeconfig] Writing "scheduler.conf" kubeconfig file
+[control-plane] Using manifest folder "/etc/kubernetes/manifests"
+[control-plane] Creating static Pod manifest for "kube-apiserver"
+[control-plane] Creating static Pod manifest for "kube-controller-manager"
+[control-plane] Creating static Pod manifest for "kube-scheduler"
+[etcd] Creating static Pod manifest for local etcd in "/etc/kubernetes/manifests"
+[wait-control-plane] Waiting for the kubelet to boot up the control plane as static Pods from directory "/etc/kubernetes/manifests". This can take up to 4m0s
+[apiclient] All control plane components are healthy after 18.001405 seconds
+[upload-config] Storing the configuration used in ConfigMap "kubeadm-config" in the "kube-system" Namespace
+[kubelet] Creating a ConfigMap "kubelet-config-1.16" in namespace kube-system with the configuration for the kubelets in the cluster
+[upload-certs] Skipping phase. Please see --upload-certs
+[mark-control-plane] Marking the node k8smaster as control-plane by adding the label "node-role.kubernetes.io/master=''"
+[mark-control-plane] Marking the node k8smaster as control-plane by adding the taints [node-role.kubernetes.io/master:NoSchedule]
+[bootstrap-token] Using token: to48h0.8ho6t48fjd92ao41
+[bootstrap-token] Configuring bootstrap tokens, cluster-info ConfigMap, RBAC Roles
+[bootstrap-token] configured RBAC rules to allow Node Bootstrap tokens to post CSRs in order for nodes to get long term certificate credentials
+[bootstrap-token] configured RBAC rules to allow the csrapprover controller automatically approve CSRs from a Node Bootstrap Token
+[bootstrap-token] configured RBAC rules to allow certificate rotation for all node client certificates in the cluster
+[bootstrap-token] Creating the "cluster-info" ConfigMap in the "kube-public" namespace
+[addons] Applied essential addon: CoreDNS
+[addons] Applied essential addon: kube-proxy
+
+Your Kubernetes control-plane has initialized successfully!
+
+To start using your cluster, you need to run the following as a regular user:
+
+  mkdir -p $HOME/.kube
+  sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+  sudo chown $(id -u):$(id -g) $HOME/.kube/config
+
+You should now deploy a pod network to the cluster.
+Run "kubectl apply -f [podnetwork].yaml" with one of the options listed at:
+  https://kubernetes.io/docs/concepts/cluster-administration/addons/
+
+Then you can join any number of worker nodes by running the following on each as root:
+
+kubeadm join 192.168.1.10:6443 --token to48h0.8ho6t48fjd92ao41 \
+    --discovery-token-ca-cert-hash sha256:a9ca9aea7ef2dd86dd6ca15bf4ffbc99f3d449b333f4e86744946a9af025db41 
+######使kubectl命令可以正常使用......
+Client Version: version.Info{Major:"1", Minor:"16", GitVersion:"v1.16.2", GitCommit:"c97fe5036ef3df2967d086711e6c0c405941e14b", GitTreeState:"clean", BuildDate:"2019-10-15T19:18:23Z", GoVersion:"go1.12.10", Compiler:"gc", Platform:"linux/amd64"}
+Server Version: version.Info{Major:"1", Minor:"16", GitVersion:"v1.16.2", GitCommit:"c97fe5036ef3df2967d086711e6c0c405941e14b", GitTreeState:"clean", BuildDate:"2019-10-15T19:09:08Z", GoVersion:"go1.12.10", Compiler:"gc", Platform:"linux/amd64"}
+Connection to 192.168.1.10 closed.

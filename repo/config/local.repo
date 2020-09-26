@@ -1,0 +1,6 @@
+[k8s]
+name=k8s repo
+baseurl=file:///data/k8s/repo/yum
+enabled=1
+gpgcheck=0
+priority=1

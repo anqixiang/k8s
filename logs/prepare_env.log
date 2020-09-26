@@ -1,0 +1,97 @@
+[32m############环境准备......[0m
+excute time:2020-09-03 21:52:25
+3
+[32m############设置主机名......[0m
+   Static hostname: k8smaster
+         Icon name: computer-vm
+           Chassis: vm
+        Machine ID: 0ef9d66b907f4b2b93459dfb4fd84d90
+           Boot ID: 31fcdd8aff1d4b618cb1ee0eca99f5aa
+    Virtualization: kvm
+  Operating System: CentOS Linux 7 (Core)
+       CPE OS Name: cpe:/o:centos:centos:7
+            Kernel: Linux 3.10.0-957.5.1.el7.x86_64
+      Architecture: x86-64
+[32m############关闭防火墙，禁用selinux......[0m
+[32m############关闭swap......[0m
+              total        used        free      shared  buff/cache   available
+Mem:           3.7G        180M        955M        8.6M        2.6G        3.3G
+Swap:            0B          0B          0B
+[32m############开启路由转发......[0m
+* Applying /usr/lib/sysctl.d/00-system.conf ...
+* Applying /usr/lib/sysctl.d/10-default-yama-scope.conf ...
+kernel.yama.ptrace_scope = 0
+* Applying /usr/lib/sysctl.d/50-default.conf ...
+kernel.sysrq = 16
+kernel.core_uses_pid = 1
+net.ipv4.conf.default.rp_filter = 1
+net.ipv4.conf.all.rp_filter = 1
+net.ipv4.conf.default.accept_source_route = 0
+net.ipv4.conf.all.accept_source_route = 0
+net.ipv4.conf.default.promote_secondaries = 1
+net.ipv4.conf.all.promote_secondaries = 1
+fs.protected_hardlinks = 1
+fs.protected_symlinks = 1
+* Applying /etc/sysctl.d/99-sysctl.conf ...
+* Applying /etc/sysctl.d/huawei.conf ...
+vm.swappiness = 0
+net.core.somaxconn = 1024
+net.ipv4.tcp_max_tw_buckets = 5000
+net.ipv4.tcp_max_syn_backlog = 1024
+* Applying /etc/sysctl.d/k8s.conf ...
+net.ipv4.ip_forward = 1
+* Applying /etc/sysctl.conf ...
+[32m############配置yum源......[0m
+Loaded plugins: fastestmirror, priorities
+Cleaning repos: k8s
+Cleaning up list of fastest mirrors
+Other repos take up 62 M of disk space (use --verbose for details)
+[96myum源可用[0m
+Connection to 192.168.1.10 closed.
+3
+[32m############设置主机名......[0m
+   Static hostname: k8snode1
+         Icon name: computer-vm
+           Chassis: vm
+        Machine ID: 0ef9d66b907f4b2b93459dfb4fd84d90
+           Boot ID: e69c2e909fae490d85e743ee9c7e76d5
+    Virtualization: kvm
+  Operating System: CentOS Linux 7 (Core)
+       CPE OS Name: cpe:/o:centos:centos:7
+            Kernel: Linux 3.10.0-957.5.1.el7.x86_64
+      Architecture: x86-64
+[32m############关闭防火墙，禁用selinux......[0m
+[32m############关闭swap......[0m
+              total        used        free      shared  buff/cache   available
+Mem:           3.7G        161M        3.0G        8.5M        601M        3.3G
+Swap:            0B          0B          0B
+[32m############开启路由转发......[0m
+* Applying /usr/lib/sysctl.d/00-system.conf ...
+* Applying /usr/lib/sysctl.d/10-default-yama-scope.conf ...
+kernel.yama.ptrace_scope = 0
+* Applying /usr/lib/sysctl.d/50-default.conf ...
+kernel.sysrq = 16
+kernel.core_uses_pid = 1
+net.ipv4.conf.default.rp_filter = 1
+net.ipv4.conf.all.rp_filter = 1
+net.ipv4.conf.default.accept_source_route = 0
+net.ipv4.conf.all.accept_source_route = 0
+net.ipv4.conf.default.promote_secondaries = 1
+net.ipv4.conf.all.promote_secondaries = 1
+fs.protected_hardlinks = 1
+fs.protected_symlinks = 1
+* Applying /etc/sysctl.d/99-sysctl.conf ...
+* Applying /etc/sysctl.d/huawei.conf ...
+vm.swappiness = 0
+net.core.somaxconn = 1024
+net.ipv4.tcp_max_tw_buckets = 5000
+net.ipv4.tcp_max_syn_backlog = 1024
+* Applying /etc/sysctl.d/k8s.conf ...
+net.ipv4.ip_forward = 1
+* Applying /etc/sysctl.conf ...
+[32m############配置yum源......[0m
+Loaded plugins: fastestmirror, priorities
+Cleaning repos: k8s
+Cleaning up list of fastest mirrors
+[96myum源可用[0m
+Connection to 192.168.1.11 closed.
