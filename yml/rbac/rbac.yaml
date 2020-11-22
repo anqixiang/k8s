@@ -1,0 +1,25 @@
+kind: Role
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  namespace: default
+  name: pod-reader
+rules:
+- apiGroups: ["","apps"]
+  resources: ["pods","deployments","services"]   #资源
+  verbs: ["get", "watch", "list"]   #对资源的操作
+
+---
+
+kind: RoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: read-pods
+  namespace: default
+subjects:
+- kind: User
+  name: devops          #与生成证书的名字匹配
+  apiGroup: rbac.authorization.k8s.io
+roleRef:
+  kind: Role
+  name: pod-reader      #通过名字与Role匹配
+  apiGroup: rbac.authorization.k8s.io
